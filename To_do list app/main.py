@@ -12,7 +12,9 @@ print("2. add something to the to do list")
 time.sleep(3)
 print("3. take something away from the list")
 time.sleep(3)
-print("4. Exit")
+print("4. Edit list")
+time.sleep(3)
+print("5. Exit")
 time.sleep(3)
 
 while True:
@@ -39,6 +41,17 @@ while True:
             print("This attribute is not in the list\n")
 
     elif ans == "4":
-     print("Hope to see you again!")
-     break
+        number_attribute_to_change = input("what attribute do you want to change?")
+        if number_attribute_to_change.isdigit():
+            index = int(number_attribute_to_change)
+            if index >0 and index < len(to_do_list):
+                new_attribute = input(f"What do you want to change {[number_attribute_to_change]} to be?")
+                print(f"The attribute, {[index]} has been changed to {new_attribute}")
+                to_do_list[index] = new_attribute
+            else:
+                print("This attribute does not exist!")
+
+    elif ans == "5":
+        print("Hope to see you again!")
+        break
         
